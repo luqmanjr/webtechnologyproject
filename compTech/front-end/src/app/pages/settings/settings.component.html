@@ -1,0 +1,43 @@
+<h1 mat-dialog-title>Edit Your Profile</h1>
+<hr>
+<mat-dialog-content>
+    <form [formGroup]="editForm">
+        <div class="row">
+            <div class="col-lg-6">
+                <mat-form-field class="w-100">
+                    <mat-label>First Name</mat-label>
+                    <input matInput formControlName="firstName" tabindex="-1" [(ngModel)]="userInfo.firstName">
+                </mat-form-field>
+                <mat-form-field class="w-100">
+                    <mat-label>Username</mat-label>
+                    <input matInput formControlName="username" tabindex="-1" [(ngModel)]="userInfo.username">
+                </mat-form-field>
+                <mat-form-field class="w-100">
+                    <mat-label>Phone Number</mat-label>
+                    <input matInput formControlName="pnum" tabindex="-1" [(ngModel)]="userInfo.pnum">
+                </mat-form-field>
+            </div>
+            <div class="col-lg-6">
+                <mat-form-field class="w-100">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput formControlName="lastName" tabindex="-1" [(ngModel)]="userInfo.lastName">
+                </mat-form-field>
+                <mat-form-field class="w-100">
+                    <mat-label>Email Address</mat-label>
+                    <input matInput formControlName="email" tabindex="-1" [(ngModel)]="userInfo.email">
+                </mat-form-field>
+                <mat-form-field class="w-100">
+                    <mat-label>Address</mat-label>
+                    <input matInput formControlName="address" tabindex="-1" [(ngModel)]="userInfo.address">
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
+</mat-dialog-content>
+<hr>
+<mat-dialog-actions>
+    <div class="w-100 text-center">
+        <button class="btn btn-danger mx-2" (click)="onNoClick()">Close</button>
+        <button mat-raised-button color="primary" [disabled]="editForm.invalid" (click)="editProfile()">Save Changes</button>
+    </div>
+</mat-dialog-actions>

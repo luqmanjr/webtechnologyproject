@@ -1,0 +1,16 @@
+// .container {
+    
+//     box-shadow: 1px 1px 10px;
+// }
+.spinner-center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000; // Make sure it's above other elements
+  }
+  .custom-snackbar {
+    background-color: #60d642 !important; /* Bootstrap primary color */
+    color: #fff !important;
+  }
+  

@@ -1,0 +1,36 @@
+
+<div class="container mt-4">
+  <app-card title="Send Request Form" subtitle="Send your computer problem"> 
+    <hr>
+    <form [formGroup]="sendReqForm">
+      <div class="row">
+          <div class="col-lg-6">
+            <mat-form-field class="w-100 example-full-width">
+              <mat-label>Select problem type</mat-label>
+              <mat-select formControlName="problem_id">
+               
+                <mat-option *ngFor="let problem of viewProblems" [value]="problem.problem_id"> {{problem.problem_name}}</mat-option>
+                <!-- <mat-option value=""></mat-option>
+                <mat-option value=""></mat-option> -->
+              </mat-select>
+            </mat-form-field>
+            
+              <mat-form-field class="w-100 example-full-width"  appearance="fill">
+                <mat-label>Describe problem</mat-label>
+                <textarea matInput formControlName="problem_description"></textarea>
+              </mat-form-field>
+          </div>
+          <div class="col-lg-6">
+              <mat-form-field class="w-100 example-full-width"  appearance="fill">
+                  <mat-label>Computer Model</mat-label>
+                  <input matInput formControlName="computer_model" placeholder="Please note here your pc model">
+              </mat-form-field>
+          </div>
+      </div>
+  </form>
+  <hr>
+  <button mat-raised-button color="primary" [disabled]="sendReqForm.invalid" (click)="submit()"><mat-icon>save</mat-icon>Submit</button>
+  <mat-spinner *ngIf="loading" diameter="60" class="spinner-center"></mat-spinner>
+  </app-card>
+</div>
+
